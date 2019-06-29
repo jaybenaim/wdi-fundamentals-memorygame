@@ -25,7 +25,6 @@ var cards = [
 var cardsInPlay = []; 
 var score = 0; 
 
-
 const checkForMatch = () => { 
     if(cardsInPlay[0] === cardsInPlay[1]) { 
         // make the alert appear after the second card is clicked
