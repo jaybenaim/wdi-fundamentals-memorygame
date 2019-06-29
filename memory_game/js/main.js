@@ -1,5 +1,3 @@
-
-
 var cards = [
     { 
         rank : "queen", 
@@ -25,33 +23,52 @@ var cards = [
 }
 ]; 
 var cardsInPlay = []; 
+var score = 0; 
+
 
 const checkForMatch = () => { 
     if(cardsInPlay[0] === cardsInPlay[1]) { 
-        return "You found a match!"; 
+        // make the alert appear after the second card is clicked
+        setTimeout(function(){
+             alert("You found a match!"); 
+            }, 200);
+            // add 1 to the score when a match is made 
+        localStorage.setItem('score', score += 1);
+        let currentScore = localStorage.getItem('score');
+        // display score 
+        $('#score').append(currentScore); 
     } else {  
-       return "Not a match!"; 
+        setTimeout(function(){
+            alert("Not a match!");
+         }, 200);
+         localStorage.setItem('score', score = 0); 
+         let currentScore = localStorage.getItem('score'); 
+         $('#score').append(currentScore); 
     }
  }; 
- 
-// get the cards by the index number 
-const flipCard = (cardId) => { 
-    cardsInPlay.push(cards[cardId].rank);
-    console.log(cards[cardId].cardImage);
-    console.log(cards[cardId].suit);
-    var match = checkForMatch();
-    
-    if (cardsInPlay.length === 2) { 
-        return  "User flipped " + cards[cardId].rank + " " + match;
-    }  else { 
-        return "User flipped " + cards[cardId].rank;
+
+var flipCard = function() {
+	var cardId = this.getAttribute('data-id');
+	this.setAttribute('src', cards[cardId].cardImage);
+	cardsInPlay.push(cards[cardId].rank);
+	if(cardsInPlay.length === 2 ) {
+        checkForMatch();
+    } 
+}
+
+const createBoard = () => { 
+    for(let i = 0; i < cards.length; i++) { 
+        var cardElement = document.createElement("img"); 
+        cardElement.setAttribute('src', "images/back.png"); 
+        cardElement.setAttribute('data-id', i); 
+        document.getElementById('game-board').appendChild(cardElement); 
+        cardElement.addEventListener('click', flipCard);
     }
-    
-     
-};
+}
 
-console.log(flipCard(0)); 
-console.log(flipCard(1)) ; 
+// refresh the page on reset button click 
+function Refresh() {
+     window.parent.location = window.parent.location.href;
+}
 
-// when a user flips a card add that card to array of cards in play 
-// if the user flipped two cards check for a match 
+createBoard(); 

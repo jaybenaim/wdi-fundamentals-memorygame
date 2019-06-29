@@ -64,6 +64,9 @@ p {
 img { 
     margin: 40px 8px 0 8px; 
 }
+img:hover { 
+    cursor: pointer; 
+}
 
 footer { 
     text-transform: uppercase; 
@@ -98,4 +101,25 @@ footer p {
 .name { 
     color: #F15B31; 
     font-weight: 700; 
+}
+#btnReset { 
+    margin-top: 15px; 
+}
+#scoreContainer { 
+    width: 150px; 
+    border: 2px solid gray; 
+    height: 100px; 
+    background-color: black ; 
+    display: block; 
+} 
+#scoreLabel { 
+    font-weight: bold; 
+    color: white; 
+    float: left; 
+    margin-left: 10px; 
+}
+#score { 
+    color: yellow; 
+    float: right; 
+    margin-right: 20px; 
 }
