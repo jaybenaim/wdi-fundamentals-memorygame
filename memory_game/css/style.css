@@ -3,11 +3,13 @@ body {
     text-transform: uppercase; 
     margin: 0; 
 }
+
 header { 
     background-color: #F15B31; 
     color: white; 
     padding: 30px 20px 30px 20px;
 }
+
 nav { 
     background-color: #00A6B3; 
     color: white; 
@@ -17,6 +19,7 @@ nav {
 a { 
     border-bottom: 2px solid transparent; 
 }
+
 a:hover { 
     border-color: white; 
 }
@@ -39,7 +42,6 @@ a {
     font-size: 18px;
     margin: 0 20px 0 20px; 
     color: white; 
-
 }
 
 h2 { 
@@ -64,6 +66,7 @@ p {
 img { 
     margin: 40px 8px 0 8px; 
 }
+
 img:hover { 
     cursor: pointer; 
 }
@@ -98,13 +101,16 @@ footer p {
     height: 0;
     font-size: 0;
 }
+
 .name { 
     color: #F15B31; 
     font-weight: 700; 
 }
+
 #btnReset { 
     margin-top: 15px; 
 }
+
 #scoreContainer { 
     width: 150px; 
     border: 2px solid gray; 
@@ -112,12 +118,14 @@ footer p {
     background-color: black ; 
     display: block; 
 } 
+
 #scoreLabel { 
     font-weight: bold; 
     color: white; 
     float: left; 
     margin-left: 10px; 
 }
+
 #score { 
     color: yellow; 
     float: right; 
