@@ -24,25 +24,43 @@ var cards = [
 ]; 
 var cardsInPlay = []; 
 var score = 0; 
+ 
 
+function storeScore() {
+    localStorage.setItem('score', Number(score) );
+    let currentScore = localStorage.getItem('score');
+    // display score  
+    $('#score').html(''); 
+    $('#score').append(currentScore); 
+}
 const checkForMatch = () => { 
+    //&& cardsInPlay.length === 2 || cardsInPlay.length === 4
     if(cardsInPlay[0] === cardsInPlay[1]) { 
-        // make the alert appear after the second card is clicked
+        // delay the alert 
         setTimeout(function(){
              alert("You found a match!"); 
             }, 200);
-            // add 1 to the score when a match is made 
-        localStorage.setItem('score', score += 1);
-        let currentScore = localStorage.getItem('score');
-        // display score 
-        $('#score').append(currentScore); 
-    } else {  
+        // add 1 to the score when a match is made 
+        Number(score++);
+       storeScore(); 
+       cardsInPlay = []; 
+    } else if (cardsInPlay[0] !== cardsInPlay[1] ) {  
         setTimeout(function(){
             alert("Not a match!");
          }, 200);
-         localStorage.setItem('score', score = 0); 
-         let currentScore = localStorage.getItem('score'); 
-         $('#score').append(currentScore); 
+         storeScore(); 
+         Number(score) = 0;   
+         cardsInPlay = [];
+    } else if (cardsInPlay.length === 2 || cardsInPlay.length === 4) { 
+        score.replace(score, currentScore); 
+
+    } else { 
+        setTimeout(function(){
+            alert("Not a match!");
+         }, 200);
+         storeScore(); 
+         $('#score').hide(); 
+
     }
  }; 
 
