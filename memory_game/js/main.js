@@ -46,6 +46,7 @@ const checkForMatch = () => {
  }; 
 
 var flipCard = function() {
+    
     // set cards[cardId] using index number 
     var cardId = this.getAttribute('data-id');
     // add clicked cards image 
@@ -59,6 +60,10 @@ var flipCard = function() {
     } 
 }
 
+function flipBack() { 
+        this.setAttribute('src', "images/back.png");
+}
+
 const createBoard = () => { 
     for(let i = 0; i < cards.length; i++) { 
         // create card images 
@@ -70,7 +75,8 @@ const createBoard = () => {
         // draw each image card onto the html in the game board div 
         document.getElementById('game-board').appendChild(cardElement); 
         // add click event to each card 
-        cardElement.addEventListener('click', flipCard);
+        cardElement.addEventListener('mousedown', flipCard);
+        cardElement.addEventListener('mouseup', flipBack); 
     }
 }
 
