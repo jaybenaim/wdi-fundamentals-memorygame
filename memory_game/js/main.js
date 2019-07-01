@@ -63,7 +63,24 @@ function flipBack() {
     this.setAttribute('src', "images/back.png");
 }
 
-const createBoard = () => { 
+
+//Fisher-Yates Shuffle
+function shuffle(array) {
+    var m = array.length, t, i;
+    // While there remain elements to shuffle…
+    while (m) {
+      // Pick a remaining element…
+      i = Math.floor(Math.random() * m--);
+      // And swap it with the current element.
+      t = array[m];
+      array[m] = array[i];
+      array[i] = t;
+    }
+    return array;
+  }
+  
+  const createBoard = () => { 
+    
     for(let i = 0; i < cards.length; i++) { 
         // create card images 
         var cardElement = document.createElement("img"); 
@@ -91,10 +108,10 @@ function storeScore() {
     $('#score').append(currentScore); 
 }
 
-// refresh the page on reset button click 
 function Refresh() {
-    // refresh the page when clicking the reset button 
-    window.parent.location = window.parent.location.href;
+    // // refresh the page when clicking the reset button 
+    score = 0; 
+    storeScore(); 
 }
 // create the cards and display them on the webpage
 createBoard(); 
