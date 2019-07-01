@@ -11,14 +11,10 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <!--Semantic UI -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.min.css" integrity="sha256-xtpiJw1+6DW1Oac4CVyU7PbCxHxufOBIspA9T79Y384=" crossorigin="anonymous" />
-      <!--Countdown Plugin-->
-      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-      <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css"> 
-      <script type="text/javascript" src="js/jquery.plugin.js"></script> 
-      <script type="text/javascript" src="js/jquery.countdown.js"></script>
-    </head>
+      </head>
 
 <body>
+  <div class="body-container"> 
   <header>
       <h1>Memory Game!</h1>
   </header>
@@ -31,7 +27,7 @@
   <main> 
     
     <h2 id="instructions">Instructions</h2>
-    <p>
+    <p class="instructionsP">
       Concentration, also known as Match Match,
         Memory, Pelmanism, Shinkei-suijaku,
         Pexeso or simply Pairs, is a card game 
@@ -49,8 +45,9 @@
     </div>
     <div class="timer-container">
       <button class="countdown-start ui basic green button">Start</button>
-      <div id="time" class="ui basic red button">00:10</div>
+      
     </div>
+    <div id="time" class="red-btn">00:10</div>
   </div> 
 
     <div class="hintsContainer">
@@ -60,17 +57,20 @@
     <section id="game" > 
     <div id="game-board" class="board clearfix"></div>
     </section>
-
-    <button id="btnReset" class="ui blue basic button" type="button" onClick="resetScore()">Reset Score</button>
-    <button id="btnRandom" class="ui blue basic button" type="button" onClick="shuffle(cards)">Randomize Cards</button>
-    <button id="btnAddRow" class="ui blue basic button" type="button" onClick="addRow()">Add Row</button>
-   
+    <div class="btns"> 
+      <button id="btnReset" class="ui blue basic button bottom-btn" type="button" onClick="resetScore()">Reset Score</button>
+      
+      <button id="btnRandom" class="ui blue basic button bottom-btn" type="button" onClick="shuffle(cards)">Randomize Cards</button>
+      
+      <button id="btnAddRow" class="ui blue basic button bottom-btn" type="button" onClick="addRow()">Add Row</button>
+    </div> 
   </main>
   <footer class="clearfix"> 
     <p class="copyright">Copyright 2019</p>
     <p class="message">Created with &hearts; by <span class="name">Jay</span> </p>
   </footer>
 <script src="js/main.js"></script>
+</div>
 </body>
 
 </html>

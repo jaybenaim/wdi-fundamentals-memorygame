@@ -119,33 +119,29 @@ footer p {
     display: block; 
     float: left; 
     position: fixed; 
-    margin-top: -160px;
-    margin-left: -200px; 
+    top: 360px;
+    left: 10px; 
 } 
-
 #scoreLabel { 
     font-weight: bold; 
     color: white; 
     float: left; 
     margin-left: 10px; 
 }
-
 #score { 
     color: yellow; 
     float: right; 
     margin-right: 20px; 
 }
-.countdown-start { 
-    height: 50px; 
-    width: 100px;
-    font-size: 22px; 
-    
-}
 .timer-container { 
     float: left; 
     margin-left: 350px;  
 }
-
+.countdown-start { 
+    height: 50px; 
+    width: 100px;
+    font-size: 22px; 
+}
 #time { 
     padding: 14px; 
     font-size: 22px; 
@@ -156,4 +152,56 @@ footer p {
 .hints { 
     margin-top: 140px; 
 }
+.red-btn { 
+    border: 1px solid red; 
+    border-radius: 4px; 
+    background: rgba(255,0,0,0.2); 
+    color: black; 
+    font-weight: 900; 
+}
+.spacer { 
+   
+    color: white; 
+}
 
+@media (max-width: 400px) { 
+    #game, h1, h2, main  { 
+        width: 34%; 
+    } 
+    h1 { 
+        text-align: center; 
+        margin-left: 70px;
+    }
+    #instructions { 
+        margin-left: -20px; 
+    }
+    #scoreContainer { 
+        width: 120px; 
+        height: 60px; 
+        left: 0; 
+        top: 100;
+        border: 2px outset gray; 
+    }
+    .timer-container { 
+        width: 120px;
+        position: fixed; 
+        left: -347px; 
+        top: 430px; 
+    }
+    .red-btn { 
+        width: 80px; 
+        position: fixed;
+        left: -15px;
+        top: 500px; 
+    }
+    .instructionsP { 
+        height: 200px; 
+        overflow: scroll; 
+    }
+    .hints { 
+        margin-top: 40px; 
+    }
+    .bottom-btn { 
+        width: 190px;
+    }
+}
