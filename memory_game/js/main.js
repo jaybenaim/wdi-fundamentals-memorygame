@@ -32,7 +32,7 @@ const checkForMatch = () => {
              alert("You found a match!"); 
             }, 200);
         // add 1 to the score when a match is made 
-        Number(score++);
+        score++;
        storeScore(); 
        // clear clicked cards array 
        cardsInPlay = []; 
@@ -46,7 +46,6 @@ const checkForMatch = () => {
  }; 
 
 var flipCard = function() {
-    
     // set cards[cardId] using index number 
     var cardId = this.getAttribute('data-id');
     // add clicked cards image 
@@ -61,7 +60,7 @@ var flipCard = function() {
 }
 
 function flipBack() { 
-        this.setAttribute('src', "images/back.png");
+    this.setAttribute('src', "images/back.png");
 }
 
 const createBoard = () => { 
@@ -69,14 +68,15 @@ const createBoard = () => {
         // create card images 
         var cardElement = document.createElement("img"); 
         // set each cards image src to back.png image 
-        cardElement.setAttribute('src', "images/back.png"); 
+        cardElement.setAttribute('src',"images/back.png"); 
         // set each cards data-id attribute 
         cardElement.setAttribute('data-id', i); 
         // draw each image card onto the html in the game board div 
         document.getElementById('game-board').appendChild(cardElement); 
-        // add click event to each card 
+        // add event to show card on click 
         cardElement.addEventListener('mousedown', flipCard);
-        cardElement.addEventListener('mouseup', flipBack); 
+        // show card back when user mouse leaves 
+        cardElement.addEventListener('mouseleave', flipBack); 
     }
 }
 
