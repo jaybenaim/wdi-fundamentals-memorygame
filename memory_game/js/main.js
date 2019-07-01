@@ -108,9 +108,7 @@ function storeScore() {
     $('#score').append(currentScore); 
 }
 
-function Refresh() {
-
-    shuffle(cards); 
+function resetScore() {
     // // refresh the page when clicking the reset button 
     score = 0; 
     storeScore(); 
