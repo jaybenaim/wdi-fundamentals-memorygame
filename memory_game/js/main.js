@@ -63,7 +63,6 @@ function flipBack() {
     this.setAttribute('src', "images/back.png");
 }
 
-
 //Fisher-Yates Shuffle
 function shuffle(array) {
     var m = array.length, t, i;
@@ -113,5 +112,31 @@ function resetScore() {
     score = 0; 
     storeScore(); 
 }
+function startTimer(duration, display) {
+    var timer = duration, minutes, seconds;
+    var inter = setInterval(function () {
+        minutes = parseInt(timer / 60, 10);
+        seconds = parseInt(timer % 60, 10);
+
+        minutes = minutes < 10 ? "0" + minutes : minutes;
+        seconds = seconds < 10 ? "0" + seconds : seconds;
+
+        display.textContent = minutes + ":" + seconds;
+
+        if (--timer < 0) {
+            timer = duration;
+        } else if (timer === 0)  { 
+            display.textContent = "Times up!"; 
+            clearInterval(inter); 
+        }
+    }, 1000);
+}
+
+$('.countdown-start').click( function () {
+    var tenSeconds = 60 * .15,
+        display = document.querySelector('#time');
+    startTimer(tenSeconds, display);
+    
+});
 // create the cards and display them on the webpage
 createBoard(); 

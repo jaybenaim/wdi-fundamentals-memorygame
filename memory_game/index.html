@@ -11,6 +11,11 @@
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
       <!--Semantic UI -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/components/button.min.css" integrity="sha256-xtpiJw1+6DW1Oac4CVyU7PbCxHxufOBIspA9T79Y384=" crossorigin="anonymous" />
+      <!--Countdown Plugin-->
+      <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="css/jquery.countdown.css"> 
+      <script type="text/javascript" src="js/jquery.plugin.js"></script> 
+      <script type="text/javascript" src="js/jquery.countdown.js"></script>
     </head>
 
 <body>
@@ -36,15 +41,20 @@
         The object of the game is to turn over 
         pairs of matching cards.
     </p>
-
+<div class="container"> 
     <div id="scoreContainer"> 
       <p id="scoreLabel">Score: </p>
       <p id="score"></p>
       <p id="newScore"></p>
     </div>
-    
-    <div class="hardModeContainer">
-      <p> Hints: The card disappears when you mouse the mouse away. Let's test that memory! </p>
+    <div class="timer-container">
+      <button class="countdown-start ui basic green button">Start</button>
+      <div id="time" class="ui basic red button">00:10</div>
+    </div>
+  </div> 
+
+    <div class="hintsContainer">
+      <p class="hints"> Hints: The card disappears when you mouse the mouse away. Let's test that memory! </p>
     </div>
 
     <section id="game" > 

@@ -117,6 +117,7 @@ footer p {
     height: 100px; 
     background-color: black ; 
     display: block; 
+    float: left; 
 } 
 
 #scoreLabel { 
@@ -131,3 +132,24 @@ footer p {
     float: right; 
     margin-right: 20px; 
 }
+.countdown-start { 
+    height: 50px; 
+    width: 100px;
+    font-size: 22px; 
+}
+.timer-container { 
+    float: left; 
+    margin-left: 50px; 
+}
+
+#time { 
+    padding: 14px; 
+    font-size: 22px; 
+    letter-spacing: 3px; 
+    float: right; 
+    margin-left: 20px;  
+}
+.hints { 
+    margin-top: 140px; 
+}
+
