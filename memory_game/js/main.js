@@ -80,7 +80,7 @@ function shuffle(array) {
   }
   
   const createBoard = () => { 
-    
+    shuffle(cards); 
     for(let i = 0; i < cards.length; i++) { 
         // create card images 
         var cardElement = document.createElement("img"); 
@@ -109,6 +109,8 @@ function storeScore() {
 }
 
 function Refresh() {
+
+    shuffle(cards); 
     // // refresh the page when clicking the reset button 
     score = 0; 
     storeScore(); 
