@@ -63,7 +63,7 @@ function flipBack() {
     this.setAttribute('src', "images/back.png");
 }
 
-//Fisher-Yates Shuffle
+// Fisher-Yates Shuffle - shuffle the cards 
 function shuffle(array) {
     var m = array.length, t, i;
     // While there remain elements to shuffle…
@@ -112,6 +112,8 @@ function resetScore() {
     score = 0; 
     storeScore(); 
 }
+
+// timer function 
 function startTimer(duration, display) {
     var timer = duration, minutes, seconds;
     var inter = setInterval(function () {
@@ -127,16 +129,24 @@ function startTimer(duration, display) {
             timer = duration;
         } else if (timer === 0)  { 
             display.textContent = "Times up!"; 
+            // stop the timer from restarting 
             clearInterval(inter); 
         }
     }, 1000);
 }
 
+// start countdown button 
 $('.countdown-start').click( function () {
-    var tenSeconds = 60 * .15,
+    // set timer at 10 seconds 
+    var tenSeconds = 9,
         display = document.querySelector('#time');
     startTimer(tenSeconds, display);
     
 });
+// add row of cards 
+const addRow = () =>  { 
+    createBoard(); 
+}
+
 // create the cards and display them on the webpage
 createBoard(); 

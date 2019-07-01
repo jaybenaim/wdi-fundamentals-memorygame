@@ -115,9 +115,12 @@ footer p {
     width: 150px; 
     border: 2px solid gray; 
     height: 100px; 
-    background-color: black ; 
+    background-color:rgba(0,0,0,0.5); 
     display: block; 
     float: left; 
+    position: fixed; 
+    margin-top: -160px;
+    margin-left: -200px; 
 } 
 
 #scoreLabel { 
@@ -136,10 +139,11 @@ footer p {
     height: 50px; 
     width: 100px;
     font-size: 22px; 
+    
 }
 .timer-container { 
     float: left; 
-    margin-left: 50px; 
+    margin-left: 350px;  
 }
 
 #time { 
